@@ -7,26 +7,27 @@ export default function Assistant() {
   const [results, setResults] = useState([]);
 
   function handleAsk() {
-    // Simple rule-based logic (later replaced by real AI)
-    const recommended = products.filter(p =>
-      p.zari === "Pure Zari" && p.motif === "Mughal Floral"
+    // Rule-based logic (placeholder for real AI later)
+    const recommended = products.filter(
+      p => p.zari === "Pure Zari" && p.motif === "Mughal Floral"
     );
     setResults(recommended);
   }
 
   return (
-    <section className="py-40 max-w-5xl mx-auto">
+    <section className="py-40 max-w-5xl mx-auto px-6">
 
-      <h1 className="text-5xl mb-12">
+      <h1 className="text-5xl mb-12 font-serif text-charcoal dark:text-ivory">
         Ask Naksh Band — Banarasi Fabric Advisor
       </h1>
 
-      <p className="text-neutral-400 mb-12 text-lg">
+      <p className="text-neutral-700 dark:text-neutral-300 mb-12 text-lg">
         Describe your requirement and we will guide you to the right Banarasi fabric.
       </p>
 
       <textarea
-        className="w-full bg-charcoal border border-neutral-800 p-6 mb-8 text-lg"
+        className="w-full bg-ivory dark:bg-charcoal border border-neutral-300 dark:border-neutral-700 
+        p-6 mb-8 text-lg text-charcoal dark:text-ivory placeholder-neutral-500"
         rows="4"
         placeholder="Example: I need a bridal Banarasi border for a red lehenga with Mughal floral influence"
         value={question}
@@ -40,9 +41,11 @@ export default function Assistant() {
       {results.length > 0 && (
         <div className="grid md:grid-cols-2 gap-12">
           {results.map(p => (
-            <div key={p.id} className="border border-neutral-800 p-8">
-              <h2 className="text-xl mb-2 text-gold">{p.name}</h2>
-              <p className="text-neutral-400 mb-4">{p.motif} · {p.zari}</p>
+            <div key={p.id} className="border border-neutral-200 dark:border-neutral-800 p-8 rounded-sm">
+              <h2 className="text-xl mb-2 text-gold font-serif">{p.name}</h2>
+              <p className="text-neutral-700 dark:text-neutral-300 mb-4">
+                {p.motif} · {p.zari}
+              </p>
               <Link to={`/products/${p.id}`} className="btn-gold">
                 View Product
               </Link>

@@ -11,7 +11,7 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
-      <div className="absolute inset-0 bg-black/75" />
+      <div className="absolute inset-0 bg-charcoal/70 mix-blend-multiply" />
 
       {/* Content */}
       <motion.div
@@ -20,7 +20,7 @@ export default function Hero() {
         transition={{ duration: 1.4, ease: "easeOut" }}
         className="relative max-w-7xl mx-auto px-6 py-52"
       >
-        <h1 className="text-6xl md:text-7xl mb-10">
+        <h1 className="text-5xl md:text-7xl mb-10 font-serif text-ivory drop-shadow-[0_2px_20px_rgba(0,0,0,0.6)]">
           Naksh Band — Authentic Banarasi Fabric House
         </h1>
 

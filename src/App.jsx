@@ -13,7 +13,7 @@ import Stores from "./pages/Stores";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black text-white px-6">
+    <div className="min-h-screen bg-ivory text-charcoal dark:bg-charcoal dark:text-ivory px-6">
       <Navbar />
 
       <Routes>
