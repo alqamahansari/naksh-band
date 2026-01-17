@@ -1,3 +1,5 @@
+import hq from "../../assets/about/varanasi-hq.png";
+
 export default function WhyNakshBand() {
   return (
     <section className="py-40 border-t border-neutral-800">
@@ -19,9 +21,12 @@ export default function WhyNakshBand() {
           </p>
         </div>
 
-        <div className="border border-neutral-800 h-96 flex items-center justify-center text-neutral-500">
-          Varanasi Headquarters Image
-        </div>
+        <img
+          src={hq}
+          alt="Naksh Band headquarters in Varanasi"
+          className="border border-neutral-800"
+        />
+
       </div>
     </section>
   );

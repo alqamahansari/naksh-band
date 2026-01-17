@@ -1,3 +1,5 @@
+import certificate from "../../assets/about/certificate.png";
+
 export default function ZariCertification() {
   return (
     <section className="py-40">
@@ -7,7 +9,8 @@ export default function ZariCertification() {
           Zari Purity & Certification
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-20">
+        <div className="grid md:grid-cols-2 gap-20 items-center">
+
           <div>
             <p className="text-neutral-400 leading-relaxed max-w-xl">
               Naksh Band protects the authenticity of Banarasi weaving through
@@ -19,9 +22,12 @@ export default function ZariCertification() {
             </p>
           </div>
 
-          <div className="border border-neutral-800 h-72 flex items-center justify-center text-neutral-500">
-            Certification Image
-          </div>
+          <img
+            src={certificate}
+            alt="Naksh Band authenticity certificate"
+            className="border border-neutral-800"
+          />
+
         </div>
 
       </div>

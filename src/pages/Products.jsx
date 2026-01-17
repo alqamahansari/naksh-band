@@ -6,10 +6,10 @@ export default function Products() {
   const [zari, setZari] = useState("All");
   const [motif, setMotif] = useState("All");
 
-  const filtered = products.filter((p) => {
-    return (zari === "All" || p.zari === zari) &&
-           (motif === "All" || p.motif === motif);
-  });
+  const filtered = products.filter(p =>
+    (zari === "All" || p.zari === zari) &&
+    (motif === "All" || p.motif === motif)
+  );
 
   return (
     <section className="py-40 max-w-7xl mx-auto">
@@ -25,7 +25,7 @@ export default function Products() {
           value={zari}
           onChange={(e) => setZari(e.target.value)}
         >
-          <option>All Zari</option>
+          <option>All</option>
           <option>Pure Zari</option>
           <option>Silver Zari</option>
           <option>Tested Zari</option>
@@ -36,21 +36,23 @@ export default function Products() {
           value={motif}
           onChange={(e) => setMotif(e.target.value)}
         >
-          <option>All Motifs</option>
+          <option>All</option>
           <option>Mughal Floral</option>
           <option>Peacock</option>
           <option>Geometric</option>
         </select>
       </div>
 
-      {/* Product Grid */}
+      {/* Grid */}
       <div className="grid md:grid-cols-3 gap-16">
-        {filtered.map((product) => (
+        {filtered.map(product => (
           <div key={product.id} className="border border-neutral-800 p-8">
 
-            <div className="h-64 bg-neutral-900 mb-8 flex items-center justify-center text-neutral-500">
-              Product Image
-            </div>
+            <img
+              src={product.image}
+              alt={product.name}
+              className="h-64 w-full object-cover mb-8"
+            />
 
             <h2 className="text-2xl mb-2 text-gold">
               {product.name}
@@ -70,6 +72,7 @@ export default function Products() {
           </div>
         ))}
       </div>
+
     </section>
   );
 }
